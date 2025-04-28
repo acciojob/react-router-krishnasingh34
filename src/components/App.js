@@ -1,21 +1,33 @@
 
 import React from "react";
+import {BrowserRouter as Router, Route, Link, Switch,Outlet } from "react-router-dom/cjs/react-router-dom.min";
 import './../styles/App.css';
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import Home from "./Home";
-import About from "./About";
-import Navbar from "./Navbar";
+import Home from "./Component/Home";
+import About from "./Component/About";
+
 
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-        </Routes>
-      </BrowserRouter>
+       <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            <li>
+              <Link to='/about'>About</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" component={About} />
+        </Switch>
+      </div>
+    </Router>
     </div>
   )
 }
