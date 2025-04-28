@@ -2,8 +2,8 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Link, Switch,Outlet } from "react-router-dom/cjs/react-router-dom.min";
 import './../styles/App.css';
-import Home from "./Component/Home";
-import About from "./Component/About";
+import Home from "../Component/Home";
+import About from "../Component/About";
 
 
 const App = () => {
